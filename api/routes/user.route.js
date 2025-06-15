@@ -1,9 +1,9 @@
-const express = require("express");
-
+// const express = require("express");
+import express from 'express';
 // const router = express.Router();
 
-const {test,updateUser, deleteUser, getUserListings, getUser} = require("../components/user.controller.js");
-const { verifyToken } = require("../utils/verifyUser.js");
+import {test,updateUser, deleteUser, getUserListings, getUser} from "../components/user.controller.js";
+import { verifyToken } from "../utils/verifyUser.js";
 // // const {verifyToken} = require('../utils/verifyUser.js');
 
 // router.use('/user',test);
@@ -22,4 +22,5 @@ router.delete('/delete/:id',verifyToken,deleteUser);
 router.get('/listings/:id', verifyToken, getUserListings);
 router.get('/:id', verifyToken, getUser);
 
-module.exports = router;
+// module.exports = router;
+export default router;
