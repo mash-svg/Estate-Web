@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const listingSchema = new mongoose.Schema(
   {
@@ -60,4 +61,5 @@ const listingSchema = new mongoose.Schema(
 
 const Listing = mongoose.model('Listing', listingSchema);
 
-module.exports =  Listing;
+// module.exports =  Listing;
+export default Listing;
