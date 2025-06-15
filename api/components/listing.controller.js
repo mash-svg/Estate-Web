@@ -1,7 +1,9 @@
-const  Listing =  require('../models/listing.model.js');
-const errorHandler = require('../utils/error.js');
+// const  Listing =  require('../models/listing.model.js');
+// const errorHandler = require('../utils/error.js');
+import Listing from '../models/listing.model.js';
+import errorHandler from '../utils/error.js';
 
- const createListing = async (req, res, next) => {
+ export const createListing = async (req, res, next) => {
   try {
     const listing = await Listing.create(req.body);
     await listing.save();
@@ -12,7 +14,7 @@ const errorHandler = require('../utils/error.js');
 };
 
 
-const deleteListing = async (req, res, next) => {
+export const deleteListing = async (req, res, next) => {
   const listing = await Listing.findById(req.params.id);
 
   if (!listing) {
@@ -34,7 +36,7 @@ const deleteListing = async (req, res, next) => {
 
 
 
-const updateListing = async (req, res, next) => {
+export const updateListing = async (req, res, next) => {
   const listing = await Listing.findById(req.params.id);
   if (!listing) {
     return next(errorHandler(404, 'Listing not found!'));
@@ -57,7 +59,7 @@ const updateListing = async (req, res, next) => {
 
 
 
-const getListing = async (req, res, next) => {
+export const getListing = async (req, res, next) => {
   try {
     const listing = await Listing.findById(req.params.id);
     if (!listing) {
@@ -71,7 +73,7 @@ const getListing = async (req, res, next) => {
   }
 
   
-  const getListings = async (req, res, next) => {
+  export const getListings = async (req, res, next) => {
     try {
       const limit = parseInt(req.query.limit) || 9;
       const startIndex = parseInt(req.query.startIndex) || 0;
@@ -122,4 +124,4 @@ const getListing = async (req, res, next) => {
     }
   };
 
-module.exports = {createListing,deleteListing,updateListing,getListing,getListings};
+// module.exports = {createListing,deleteListing,updateListing,getListing,getListings};
