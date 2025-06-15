@@ -1,7 +1,7 @@
 // const  Listing =  require('../models/listing.model.js');
 // const errorHandler = require('../utils/error.js');
 import Listing from '../models/listing.model.js';
-import errorHandler from '../utils/error.js';
+import {errorHandler} from '../utils/error.js';
 
  export const createListing = async (req, res, next) => {
   try {
