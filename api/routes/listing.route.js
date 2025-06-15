@@ -4,7 +4,7 @@
 // const {createListing, deleteListing, updateListing, getListing, getListings} = require('../components/listing.controller')
 import express from 'express';
 
-import { createListing, deleteListing,getListing,updateListing,getListings} from '../components/listing.controller';
+import { createListing, deleteListing,getListing,updateListing,getListings} from '../components/listing.controller.js';
 import { verifyToken } from '../utils/verifyUser.js';
 const router = express.Router();
 router.post('/create',verifyToken,createListing);
